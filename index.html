@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<htmllang="id">
+
+<kepala>
+    <meta charset="UTF-8">
+    <meta http-equiv="Kompatibel dengan X-UA" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="ikon pintasan" href="images/favicon/favicon.ico" type="image/x-icon">
+    <title>Produk</title>
+    <link rel="ikon pintasan" href="images/favicon.ico" type="image/x-icon">
+    <tautan rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <tautan rel="stylesheet" href="vendor/bootstrap/bootstrap-icons.css">
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <tautan rel="stylesheet" href="https://rikikurnia.com/block/vendor/rikiblock/css/riki_block.css">
+    <gaya>
+        bagian {
+            min-tinggi: 90vh;
+        }
+
+        .bg-cokelat {
+            warna latar belakang: rgb(94, 40, 7);
+        }
+    </ gaya>
+    <script src="js/jquery-3.6.3.min.js"></script>
+</kepala>
+
+<tubuh>
+    <!-- Tulis Kode Bootstrap Di Bawah Sini -->
+
+    <nav class="navbar navbar-expand-lg bg-sukses navbar-dark w-100 fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="gambar/logo/logo_kuy.png" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="runtuh"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Beralih navigasi">
+                <span class="navbar-toggler-icon"></span>
+            </tombol>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-otomatis saya-3 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#best-seller">Terlaris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#our-team">Tim Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#review">Tinjau</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact-us">Hubungi Kami</a>
+                    </li>
+                </ul>
+                <a class="btn btn-outline-light" href="https://wa.me/6281290465034" target="_blank">Obrolan <i
+                        class="bi bi-whatsapp"></i></a>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="produk mt-5 pt-5 text-center">
+        <div class="wadah">
+            <h1 id="judul">Pilih Produk Anda</h1>
+            <p>Kualitas Biji Kopi Pilihan, Diambil Langsung Fresh dari Petani</p>
+            <hr class="border border-sukses border-3 opacity-75">
+
+            <div class="form-floating col-md-4 m-auto">
+                <select class="form-select" id="select_kopi">
+                    <opsi yang dipilih dinonaktifkan>-</opsi>
+                    <opsi nilai="arabika">Arabika</option>
+                    <nilai opsi="robusta">Robusta</option>
+                </pilih>
+                <label for="select_kopi">Pilih Jenis Kopi</label>
+            </div>
+
+            <div id="baris_produk" class="baris baris-cols-1 baris-cols-sm-2 baris-cols-md-3 baris-cols-lg-4 my-4">
+
+                <div class="col mb-4">
+                    <div class="kartu">
+                        <img src="images/produk/product_capuchino.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cappuccino</h5>
+                            <div class="row keterangan my-4">
+                                <div class="col">
+                                    100 Gram
+                                </div>
+                                <div class="col">
+                                    24.000
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-success w-100">Beli</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </bagian>
+
+    <footer class="bg-sukses py-4">
+        <div class="wadah">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <ul kelas="nav">
+                        <li class="nav-item">
+                            <a class="nav-link link-light active" aria-current="page" href="index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-light" href="index.html#best-seller">Terlaris</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-light" href="index.html#our-team">Tim Kami</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-light" href="index.html#review">Tinjau</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-light" href="index.html#contact-us">Hubungi Kami</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-light text-end">
+                    Hak Cipta Kopi Kuy 2023
+                </div>
+            </div>
+        </div>
+    </ footer>
+
+    <skrip>
+        /* Tulis Javascript Di bawah Sini*/
+        var sumber = "https://rikikurnia.com/prakerja/api/kopi"
+        var sumber2 = "data.json"
+
+        select_kopi.onchange = function(){
+            var yang dipilih = select_kopi.value
+            console.log(dipilih)
+
+            var templat = ""
+
+            $.getJSON(sumber).then(fungsi (data) {
+                var data_kopi = data[dipilih]
+                console.log(data_kopi)
+
+                data_kopi.forEach(item => {
+                    templat += `<div class="col mb-4">
+                        <div class="kartu">
+                            <img src="${item.foto}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.nama}</h5>
+                                <div class="row keterangan my-4">
+                                    <div class="col">
+                                        ${item.size}
+                                    </div>
+                                    <div class="col">
+                                        ${item.harga}
+                                    </div>
+                                </div>
+                                <a href="${item.link}" class="btn btn-success w-100">Beli</a>
+                            </div>
+                        </div>
+                    </div>`
+                })
+
+                baris_produk.innerHTML = template
+
+            })
+    
